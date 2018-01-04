@@ -1,5 +1,5 @@
 #!/bin/python
-import os
+import os,sys
 import platform
 def find_path(bin_file,path):
    for root,dirs,files in os.walk(path):
@@ -8,6 +8,7 @@ def find_path(bin_file,path):
 		path_is=os.path.join(root,each)
 		print"The {}  file location is: {}".format(bin_file,path_is)   
 		print"The configuration file location is: ", os.path.join(os.path.dirname(path_is),"conf","httpd.conf")
+                sys.exit(0)
 print"This will find the path of the httpd/httpd.exe file location"
 print"Finding the type of the system......"
 print"The Opertaing system is identified as: ", platform.system()
